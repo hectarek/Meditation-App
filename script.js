@@ -3,7 +3,7 @@
 const song = document.querySelector('.song');
 const play = document.querySelector('.play')
 const outline = document.querySelector('.moving-outline circle')
-const video = document.querySelector('.video-container video')
+const video = document.querySelector('.vid-container video')
 
 //Sounds 
 const sounds = document.querySelectorAll('.sound-picker button')
@@ -14,15 +14,33 @@ const timeSelect = document.querySelectorAll('.time-select button');
 
 //Get length of the outline 
 const outlineLength = outline.getTotalLength();
-    console.log(outlineLength)
 
 //Duration
 let fakeDuration = 600;
 
 outline.style.strokeDasharray = outlineLength;
 outline.style.strokeDashoffset = outlineLength;
+timeDisplay.textContent = `${Math.floor(fakeDuration/60)}:${Math.floor(fakeDuration%60)}`
 
 //pick different sounds
+// sounds.forEach( sound => {
+//     sound.addEventListener('click', function() {
+//         song.src = this.getAttribute('data-sound');
+//         video.src = this.getAttribute('data-video');
+//         checkPlaying(song);
+//     })
+// })
+
+sounds.forEach(sound => {
+    sound.addEventListener("click", function() {
+      song.src = this.getAttribute("data-sound");
+      video.src = this.getAttribute("data-video");
+      checkPlaying(song);
+      song.pause();
+      video.pause();
+      play.src = './svg/play.svg'
+    });
+  });
 
  //play sound
 play.addEventListener('click', ()=> {

@@ -3,6 +3,15 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  h1 {
+      color: white;
+      font-size: 48px;
+  }
+  h3 {
+      color: white;
+      font-size: 25px;
+  }
   
   .app {
     height: 100vh;
@@ -12,8 +21,7 @@
     font-family: "Montserrat", sans-serif;
   }
   
-  .time-select,
-  .sound-picker {
+  .time-select, .sound-picker {
     height: 80%;
     display: flex;
     justify-content: space-evenly;
@@ -21,8 +29,8 @@
     flex-direction: column;
     flex: 1;
   }
-  .time-select button,
-  .sound-picker button {
+
+  .time-select button, .sound-picker button {
     color: white;
     width: 30%;
     height: 10%;
@@ -41,12 +49,15 @@
     padding: 30px;
     border-radius: 50%;
   }
-  .sound-picker button:nth-child(1) {
+
+  #rain-button {
     background: #4972a1;
   }
-  .sound-picker button:nth-child(2) {
+
+  #beach-button {
     background: #a14f49;
   }
+
   .sound-picker button img {
     height: 100%;
   }
@@ -56,6 +67,11 @@
     color: black;
   }
   
+  .title-container {
+      position: absolute;
+      top: 10%;
+  }
+
   .player-container {
     position: relative;
     height: 80%;
