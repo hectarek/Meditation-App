@@ -40,6 +40,7 @@
     cursor: pointer;
     border: 2px solid white;
     transition: all 0.5s ease;
+    outline: none;
   }
   
   .sound-picker button {
@@ -49,6 +50,8 @@
     padding: 30px;
     border-radius: 50%;
   }
+
+  
 
   #rain-button {
     background: #4972a1;
@@ -67,6 +70,10 @@
     color: black;
   }
   
+  .sound-picker button:hover {
+    filter: contrast(1.6);
+  }
+
   .title-container {
       position: absolute;
       top: 10%;
@@ -93,6 +100,10 @@
   
   .player-container svg circle {
     transition: all 0.2s ease-in-out;
+  }
+  
+  .player-container img:hover {
+    transform: scale(1.05);
   }
 
   .time-display {
